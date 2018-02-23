@@ -1,40 +1,30 @@
 import React, { Component } from 'react';
-import InputField from './InputField';
-import Button from './Button';
+import Form from './Form';
 
 export default class NavBar extends Component {
 
-    constructor(props) {
+    constructor(props){
         super(props);
-
         this.state = {
-            location: ''
+            search: ''
         }
-
-        this.handleChange = this.handleChange.bind(this);
+        this.handleSearchData = this.handleSearchData.bind(this);
     }
 
-    handleChange(event) {
-        const value = event.target.value;
+    handleSearchData(data) {
         this.setState(() => {
             return {
-                location: value
+                search: data
             }
         })
     }
 
-    handleSubmit(event) {
-        event.preventDefault();
-    }
-
     render() {
+        console.log(this.state.search);
         return (
             <div className="navbar">
                 <h1>Weather App</h1>
-                <div className="inputs-container" style={{ flexDirection: "row" }}>
-                    <InputField />
-                    <Button />
-                </div>
+                <Form flexDirection={'row'} search={this.handleSearchData} />
             </div>
         );
     }

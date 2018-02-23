@@ -8,7 +8,6 @@ body {
     width: 100%;
     flex-direction: column;
     background-size: cover;
-    position: fixed;
 }
 
 .navbar {
@@ -25,10 +24,11 @@ body {
     width: 100%;
     flex-direction: column;
     background-size: cover;
+    position: fixed;
 }
 
 .home-container,
-.inputs-container {
+.form-container {
     display: flex;
     justify-content: center;
     align-items: center;

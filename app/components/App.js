@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import Background from '../images/pattern.svg';
-import NavBar from './NavBar';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Navbar from './NavBar';
 import Home from './Home';
+import Forecast from './Forecast';
 
 export default class App extends Component {
     render() {
         return (
-            <div className="container" style={{ backgroundImage: `url(${Background})` }}>
-                <NavBar />
-                <Home />
-            </div>
+            <Router>
+                <div className="container">
+                    <Navbar />
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/forecast" component={Forecast} />
+                </div>
+            </Router>
         )
     }
 }
